@@ -1,0 +1,11 @@
+# FIFO System Apache Configuration
+DirectoryIndex index.php
+
+# Prevent directory browsing
+Options -Indexes
+
+# Protect sensitive files and sqlite database
+<FilesMatch "(\.db|\.sql|\.json|\.md|config\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
